@@ -3,14 +3,13 @@ import os
 import replicate
 import streamlit as st
 from streamlit_chat import message
-from dotenv import load_dotenv
 from elevenlabs import generate
 from langchain import PromptTemplate
 from langchain.chains import LLMChain
 import openai
 
-# Load environment variables
-load_dotenv()
+# Set OpenAI API key
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 def generate_response(text):
